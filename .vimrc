@@ -52,4 +52,9 @@ function! ShowHiddenToggle()
 endfunction
 nmap <F8> mz:execute ShowHiddenToggle()<CR>'z
 
+" easier buffer navigation
+set hidden
+nnoremap <C-S-Right> :bnext<CR>
+nnoremap <C-S-Left> :bprev<CR>
+
 
