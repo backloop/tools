@@ -57,4 +57,20 @@ set hidden
 nnoremap <C-S-Right> :bnext<CR>
 nnoremap <C-S-Left> :bprev<CR>
 
+" Easier split navigation
+" Instead of ctrl-w then j, it’s just ctrl-j:
+nnoremap <C-S-J> <C-W><C-J>
+nnoremap <C-S-K> <C-W><C-K>
+nnoremap <C-S-L> <C-W><C-L>
+nnoremap <C-S-H> <C-W><C-H>
+
+" Closing a split
+" :close
+" :q
+
+" Open new split panes to right and bottom,
+" which feels more natural than Vim’s default:
+set splitbelow
+set splitright
+
 
