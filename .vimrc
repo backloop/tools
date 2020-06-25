@@ -108,6 +108,9 @@ colorscheme codedark
 "let g:airline#extensions#ycm#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 
-
+" Easier CtrlP initiation
+"nnoremap <C-F> :CtrlPMixed<CR>
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlPMixed'
 
 
