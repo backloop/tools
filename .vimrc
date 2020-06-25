@@ -95,4 +95,13 @@ set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
+"
+" VIM PLUGIN CONGIFURATION
+"
+
+" colorscheme
+colorscheme codedark
+"TODO: Change color of search highlight yellow...
+
+
 
