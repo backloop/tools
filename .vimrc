@@ -19,6 +19,10 @@ set nomodeline
 " show current active key combo in lower right corner
 set showcmd
 
+" better indentation on <enter> and in C code
+set autoindent
+set smartindent
+"
 "https://vim.fandom.com/wiki/Toggle_between_tabs_and_spaces
 " When in NORMAL mode press F9 to switch tab format
 let my_tab=4
