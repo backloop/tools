@@ -38,4 +38,18 @@ function! TabToggle()
 endfunction
 nmap <F9> mz:execute TabToggle()<CR>'z
 
+" press F8 to toggle whitespace visalization
+set nolist
+function! ShowHiddenToggle()
+    if &list
+        set nolist
+    else
+        " visually show tabs
+        set list lcs=tab:\|->
+        " visually show spaces
+        set list lcs+=space:·
+    endif
+endfunction
+nmap <F8> mz:execute ShowHiddenToggle()<CR>'z
+
 
