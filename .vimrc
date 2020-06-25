@@ -73,4 +73,14 @@ nnoremap <C-S-H> <C-W><C-H>
 set splitbelow
 set splitright
 
+" Highlight search results
+set hlsearch
+" :noh or :nohl - will turn off highligt until next search
+
+" Makes search act like search in modern browsers
+set incsearch
+
+" Show matching brackets when text indicator is over them
+set showmatch
+
 
