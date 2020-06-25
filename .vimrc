@@ -103,5 +103,11 @@ set ffs=unix,dos,mac
 colorscheme codedark
 "TODO: Change color of search highlight yellow...
 
+" vim-airline
+"let g:airline_theme='dark'
+"let g:airline#extensions#ycm#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+
+
 
 
