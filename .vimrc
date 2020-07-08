@@ -105,7 +105,10 @@ set ffs=unix,dos,mac
 
 " colorscheme
 colorscheme codedark
-"TODO: Change color of search highlight yellow...
+" adjust colorscheme
+hi IncSearch ctermfg=Black
+hi IncSearch ctermbg=Yellow
+hi Search    ctermbg=LightYellow
 
 " vim-numbertoggle
 set number
