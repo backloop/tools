@@ -105,9 +105,10 @@ set ffs=unix,dos,mac
 
 " colorscheme
 colorscheme codedark
-" adjust colorscheme
-hi IncSearch ctermfg=Black
+" adjust colorscheme for highlight of search results
+hi IncSearch ctermfg=Red
 hi IncSearch ctermbg=Yellow
+hi Search    ctermfg=Black
 hi Search    ctermbg=LightYellow
 
 " vim-numbertoggle
