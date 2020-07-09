@@ -27,3 +27,7 @@ $ vi ~/git/tools/vim/install.sh
 $ ~/git/tools/vim/install.sh
 ```
 
+## bash
+```
+$ ln -s ~/git/tools/vim/.bash_aliases ~/.bash_aliases
+```
