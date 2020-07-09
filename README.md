@@ -1,21 +1,29 @@
-# vim
-VIM configuration (.vimrc) and native VIM plugin management
+# tools
+Assorted tools for development in the console
 
-## Use this VIM configuration
+### Repository example setup 
 ```
 $ mkdir -p ~/git
 $ cd ~/git
-$ git clone https://github.com/backloop/vim.git
-$ cd ~
-$ ln -s ~/git/vim/.vimrc .vimrc
+$ git clone https://github.com/backloop/tools.git
 ```
 
-## Add plugins
+## vim 
+VIM configuration (.vimrc) and native VIM plugin management
+
+### vim setup
 ```
-$ vi ~/git/vim/install.sh
+$ ln -s ~/git/tools/vim/.vimrc ~/.vimrc
+$ ~/git/tools/vim/install.sh
 ```
 
-## Upgrade plugins
+### Add plugins
 ```
-$ ~/git/vim/install.sh
+$ vi ~/git/tools/vim/install.sh
 ```
+
+### Upgrade plugins
+```
+$ ~/git/tools/vim/install.sh
+```
+
