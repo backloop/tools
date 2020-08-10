@@ -29,5 +29,5 @@ $ ~/git/tools/vim/install.sh
 
 ## bash
 ```
-$ ln -s ~/git/tools/vim/.bash_aliases ~/.bash_aliases
+$ ln -s ~/git/tools/bash/.bash_aliases ~/.bash_aliases
 ```
