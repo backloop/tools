@@ -40,6 +40,37 @@ function package () {
   fi
 }
 
+function archive () {
+    archive_url=$1
+    archive_file=$(basename $archive_url)
+    archive_dir=$(basename $archive_url .tar.gz)
+    plugin_file=$2
+    plugin_name=$(basename $plugin_file .vim)
+
+    if [ ! -d "$plugin_name" ]; then
+        mkdir "$plugin_name"
+    fi
+    cd $plugin_name
+
+    if [ -f "$archive_file" ]; then
+        echo "$archive_dir: Already installed."
+    else
+        echo "$archive_dir: Installing..."
+        # remove previous installation
+        rm *.tar.gz
+        rm -rf plugin
+        mkdir plugin
+        # get new archive
+        wget $archive_url
+        tar -xf $archive_file
+        # install new plugin
+        f=$(find $archive_dir -name $plugin_file)
+        cp $f plugin
+        # cleanup
+        rm -rf $archive_dir
+    fi
+}
+
 #(
 #set_group syntax
 #wait
@@ -53,6 +84,7 @@ package https://github.com/tpope/vim-obsession &
 package https://github.com/tpope/vim-fugitive &
 package https://github.com/vim-airline/vim-airline &
 package https://github.com/jeffkreeftmeijer/vim-numbertoggle &
+archive http://tamacom.com/global/global-6.6.4.tar.gz gtags.vim &
 wait
 ) &
 
