@@ -121,7 +121,7 @@ set relativenumber
 let g:airline#extensions#tabline#enabled = 1
 
 
-" Easier CtrlP initiation
+" CtrlP
 "nnoremap <C-F> :CtrlPMixed<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMixed'
