@@ -68,6 +68,10 @@ nnoremap <C-S-K> <C-W><C-K>
 nnoremap <C-S-L> <C-W><C-L>
 nnoremap <C-S-H> <C-W><C-H>
 
+" easier quickfix navigation
+nnoremap <C-Up> :cp<CR>
+nnoremap <C-Down> :cn<CR>
+
 " Closing a split
 " :close
 " :q
