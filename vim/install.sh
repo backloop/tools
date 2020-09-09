@@ -44,8 +44,11 @@ function archive () {
     archive_url=$1
     archive_file=$(basename $archive_url)
     archive_dir=$(basename $archive_url .tar.gz)
-    plugin_file=$2
-    plugin_name=$(basename $plugin_file .vim)
+
+    plugin_name=$2
+
+    shift 2
+    plugin_files=$@
 
     if [ ! -d "$plugin_name" ]; then
         mkdir "$plugin_name"
@@ -64,8 +67,11 @@ function archive () {
         wget $archive_url
         tar -xf $archive_file
         # install new plugin
-        f=$(find $archive_dir -name $plugin_file)
-        cp $f plugin
+        for pf in $plugin_files; do
+            f=$(find $archive_dir -name $pf)
+            cp $f plugin
+        done
+
         # cleanup
         rm -rf $archive_dir
     fi
@@ -87,7 +93,7 @@ package https://github.com/tpope/vim-fugitive &
 package https://github.com/godlygeek/csapprox &
 package https://github.com/vim-airline/vim-airline &
 package https://github.com/jeffkreeftmeijer/vim-numbertoggle &
-archive http://tamacom.com/global/global-6.6.4.tar.gz gtags.vim &
+archive http://tamacom.com/global/global-6.6.4.tar.gz global gtags.vim gtags-cscope.vim &
 wait
 ) &
 
