@@ -126,4 +126,19 @@ let g:airline#extensions#tabline#enabled = 1
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMixed'
 
+" GLOBAL Gtags
+" Get the tags from under the current cursor location
+map <C-\> :GtagsCursor<CR>
+" Gtags also uses the quickfix window navigation maps above
 
+" vim-fugitive
+" :Gblame gets commit hashes in different colors to gether with CSApprox
+" plugin
+" Apparently only CSApprox is needed on my system.
+"let g:fugitive_dynamic_colors = 1
+
+
+" TODO:
+" GtagsCursor should not open first result by default and mess with the open
+" buffer list, test:
+" https://github.com/ronakg/quickr-cscope.vim
