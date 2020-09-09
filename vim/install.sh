@@ -79,7 +79,7 @@ function archive () {
 (
 set_group tools
 package https://github.com/ntpeters/vim-better-whitespace.git &
-package https://github.com/kien/ctrlp.vim &
+package https://github.com/ctrlpvim/ctrlp.vim &
 package https://github.com/tpope/vim-obsession &
 package https://github.com/tpope/vim-fugitive &
 package https://github.com/vim-airline/vim-airline &
