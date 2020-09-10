@@ -60,7 +60,7 @@ function archive () {
     else
         echo "$archive_dir: Installing..."
         # remove previous installation
-        rm *.tar.gz
+        rm -f *.tar.gz
         rm -rf plugin
         mkdir plugin
         # get new archive
