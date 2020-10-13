@@ -60,6 +60,20 @@ function! ShowWhitespaceToggle()
 endfunction
 nmap <F8> mz:execute ShowWhitespaceToggle()<CR>'z
 
+" press F7 to toggle line number visalization
+set number
+set relativenumber
+function! ShowLineNumberToggle()
+    " &<variable> turns the check into a boolean operation [0,1]
+    if &number
+        set nonumber
+        set norelativenumber
+    else
+        set number
+        set relativenumber
+    endif
+endfunction
+nmap <F7> mz:execute ShowLineNumberToggle()<CR>'z
 
 " easier buffer navigation
 set hidden
@@ -121,8 +135,7 @@ hi Search    ctermfg=Black
 hi Search    ctermbg=LightYellow
 
 " vim-numbertoggle
-set number
-set relativenumber
+
 
 " vim-airline
 "let g:airline_theme='dark'
