@@ -6,6 +6,10 @@
 ":so $MYVIMRC
 ":source $MYVIMRC
 
+" VIM resources
+" https://devhints.io/vimscript
+" https://learnvimscriptthehardway.stevelosh.com
+
 " load default configuration
 source $VIMRUNTIME/defaults.vim
 
