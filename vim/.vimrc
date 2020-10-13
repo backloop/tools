@@ -48,7 +48,7 @@ nmap <F9> mz:execute TabToggle()<CR>'z
 
 " press F8 to toggle whitespace visalization
 set nolist
-function! ShowHiddenToggle()
+function! ShowWhitespaceToggle()
     if &list
         set nolist
     else
@@ -58,7 +58,8 @@ function! ShowHiddenToggle()
         set list lcs+=space:·
     endif
 endfunction
-nmap <F8> mz:execute ShowHiddenToggle()<CR>'z
+nmap <F8> mz:execute ShowWhitespaceToggle()<CR>'z
+
 
 " easier buffer navigation
 set hidden
