@@ -90,6 +90,9 @@ package https://github.com/tpope/vim-obsession &
 package https://github.com/tpope/vim-fugitive &
 # CSApprox: make GVim colorschemes work in terminal mode
 # CSApprox: also make git commit hash coloring in fugitive's Gblame work
+# CSApprox: for VIM in tmux to not complain, tmux needs to have more than 8 colors
+#           $ echo 'set -g default-terminal "xterm-256color"' > ~/.tmux.conf
+#           $ tmux kill-server
 package https://github.com/godlygeek/csapprox &
 package https://github.com/vim-airline/vim-airline &
 package https://github.com/jeffkreeftmeijer/vim-numbertoggle &
