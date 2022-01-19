@@ -33,3 +33,8 @@ Mixed bag of goodies for CLI tasks
 ```
 $ ln -s ~/git/tools/bash/.bash_aliases ~/.bash_aliases
 ```
+
+## tmux
+```
+$ ln -s ~/git/tools/tmux/.tmux.conf ~/.tmux.conf
+```
