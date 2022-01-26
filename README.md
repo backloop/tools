@@ -1,7 +1,8 @@
 # tools
 Assorted tools for development in the console
 
-### Repository example setup 
+### Suggested repository setup
+Cloning this repository to the same location will enable the examples below to work out of the box.
 ```
 $ mkdir -p ~/git
 $ cd ~/git
@@ -28,6 +29,7 @@ $ ~/git/tools/vim/install.sh
 ```
 
 ## bash
+Mixed bag of goodies for CLI tasks
 ```
 $ ln -s ~/git/tools/bash/.bash_aliases ~/.bash_aliases
 ```
