@@ -46,7 +46,7 @@ function! TabToggle()
 endfunction
 nmap <F9> mz:execute TabToggle()<CR>'z
 
-" press F8 to toggle whitespace visalization
+" press F8 to toggle whitespace visualization
 set nolist
 function! ShowWhitespaceToggle()
     if &list
@@ -60,7 +60,7 @@ function! ShowWhitespaceToggle()
 endfunction
 nmap <F8> mz:execute ShowWhitespaceToggle()<CR>'z
 
-" press F7 to toggle line number visalization
+" press F7 to toggle line number visualization
 set number
 set relativenumber
 function! ShowLineNumberToggle()
@@ -154,7 +154,7 @@ map <C-\> :GtagsCursor<CR>
 " Gtags also uses the quickfix window navigation maps above
 
 " vim-fugitive
-" :Gblame gets commit hashes in different colors to gether with CSApprox
+" :Gblame gets commit hashes in different colors together with CSApprox
 " plugin
 " Apparently only CSApprox is needed on my system.
 "let g:fugitive_dynamic_colors = 1
