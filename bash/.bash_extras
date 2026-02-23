@@ -1,0 +1,24 @@
+
+#
+#sudo apt install bash-completion
+#
+
+# Enable git completion if available
+if [ -f /usr/share/bash-completion/completions/git ]; then
+    source /usr/share/bash-completion/completions/git
+fi
+
+#
+# sudo apt-install git
+#
+
+# Enable git prompt
+if [ -f /usr/lib/git-core/git-sh-prompt ]; then
+    source /usr/lib/git-core/git-sh-prompt
+fi
+
+# Show branch in prompt
+export PS1='\u@\h:\w$(__git_ps1 " (%s)")\$ '
+# colorized
+export PS1='\[\e[32m\]\u@\h\[\e[m\]:\[\e[34m\]\w\[\e[33m\]$(__git_ps1 " (%s)")\[\e[m\]\$ '
+#

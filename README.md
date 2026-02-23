@@ -33,6 +33,11 @@ Mixed bag of goodies for CLI tasks
 ```
 $ ln -s ~/git/tools/bash/.bash_aliases ~/.bash_aliases
 ```
+Add to ~/.bashrc
+```
+if [ -f ~/git/tools/bash/.bash_extras ]; then
+    . ~/git/tools/bash/.bash_extras
+fi
 
 ## tmux
 ```
