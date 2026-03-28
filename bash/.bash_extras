@@ -17,6 +17,19 @@ if [ -f /usr/lib/git-core/git-sh-prompt ]; then
     source /usr/lib/git-core/git-sh-prompt
 fi
 
+# Git prompt metadata flags:
+#   *  = unstaged changes
+#   +  = staged changes
+#   %  = untracked files
+#   $  = stashed changes
+#   <  = behind upstream
+#   >  = ahead of upstream
+#   <> = diverged
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWUNTRACKEDFILES=1
+export GIT_PS1_SHOWSTASHSTATE=1
+export GIT_PS1_SHOWUPSTREAM="auto"
+
 # Show branch in prompt
 export PS1='\u@\h:\w$(__git_ps1 " (%s)")\$ '
 # colorized
