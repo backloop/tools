@@ -38,6 +38,7 @@ Add to ~/.bashrc
 if [ -f ~/git/tools/bash/.bash_extras ]; then
     . ~/git/tools/bash/.bash_extras
 fi
+```
 
 ## tmux
 ```
