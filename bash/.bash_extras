@@ -1,4 +1,3 @@
-
 # Show at most 3 path components in \w (leading ones collapse to "...").
 PROMPT_DIRTRIM=3
 
@@ -27,12 +26,17 @@ if [ -f /usr/lib/git-core/git-sh-prompt ]; then
         *-256color|*color*|xterm*|screen*|tmux*) __git_prompt_color=yes ;;
     esac
 
+    # user@host is only worth screen space when the shell is not local.
     if [ "$__git_prompt_color" = yes ]; then
-        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;33m\]$(__git_ps1 " (%s)")\[\033[00m\]\$ '
+        [ -n "$SSH_CONNECTION$SSH_TTY" ] && __host_tag='\[\033[01;32m\]\u@\h\[\033[00m\]:'
+        # Expanded here, not at prompt time, so bash still sees the \[ \] markers
+        # and counts the prompt width correctly.
+        PS1="${debian_chroot:+($debian_chroot)}${__host_tag}"'\[\033[01;34m\]\w\[\033[01;33m\]$(__git_ps1 " (%s)")\[\033[00m\]\$ '
     else
-        PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(__git_ps1 " (%s)")\$ '
+        [ -n "$SSH_CONNECTION$SSH_TTY" ] && __host_tag='\u@\h:'
+        PS1="${debian_chroot:+($debian_chroot)}${__host_tag}"'\w$(__git_ps1 " (%s)")\$ '
     fi
-    unset __git_prompt_color
+    unset __git_prompt_color __host_tag
 
     # Keep the xterm window title that ~/.bashrc sets.
     case "$TERM" in
