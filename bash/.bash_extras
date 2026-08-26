@@ -1,4 +1,7 @@
 
+# Show at most 3 path components in \w (leading ones collapse to "...").
+PROMPT_DIRTRIM=3
+
 #
 #sudo apt install bash-completion
 #
@@ -12,26 +15,30 @@ fi
 # sudo apt-install git
 #
 
-# Enable git prompt
 if [ -f /usr/lib/git-core/git-sh-prompt ]; then
-    source /usr/lib/git-core/git-sh-prompt
+    . /usr/lib/git-core/git-sh-prompt
+
+    GIT_PS1_SHOWDIRTYSTATE=1      # * unstaged, + staged
+    GIT_PS1_SHOWSTASHSTATE=1      # $ if anything stashed
+    GIT_PS1_SHOWUNTRACKEDFILES=1  # % if untracked files
+    GIT_PS1_SHOWUPSTREAM=auto     # < behind, > ahead, <> diverged, = in sync
+
+    case "$TERM" in
+        *-256color|*color*|xterm*|screen*|tmux*) __git_prompt_color=yes ;;
+    esac
+
+    if [ "$__git_prompt_color" = yes ]; then
+        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;33m\]$(__git_ps1 " (%s)")\[\033[00m\]\$ '
+    else
+        PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(__git_ps1 " (%s)")\$ '
+    fi
+    unset __git_prompt_color
+
+    # Keep the xterm window title that ~/.bashrc sets.
+    case "$TERM" in
+    xterm*|rxvt*)
+        PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+        ;;
+    esac
 fi
 
-# Git prompt metadata flags:
-#   *  = unstaged changes
-#   +  = staged changes
-#   %  = untracked files
-#   $  = stashed changes
-#   <  = behind upstream
-#   >  = ahead of upstream
-#   <> = diverged
-export GIT_PS1_SHOWDIRTYSTATE=1
-export GIT_PS1_SHOWUNTRACKEDFILES=1
-export GIT_PS1_SHOWSTASHSTATE=1
-export GIT_PS1_SHOWUPSTREAM="auto"
-
-# Show branch in prompt
-export PS1='\u@\h:\w$(__git_ps1 " (%s)")\$ '
-# colorized
-export PS1='\[\e[32m\]\u@\h\[\e[m\]:\[\e[34m\]\w\[\e[33m\]$(__git_ps1 " (%s)")\[\e[m\]\$ '
-#
